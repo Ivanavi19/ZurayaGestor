@@ -1,7 +1,7 @@
 import { ListaClanesProvider } from './../../providers/lista-clanes/lista-clanes';
 import { ClanItem } from './../../models/clan-item/clan-item.interface';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -17,7 +17,10 @@ export class MeterClanPage {
     miembros: ""
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private servicioListaClanes:ListaClanesProvider) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              private servicioListaClanes:ListaClanesProvider,
+              private toast: ToastController) {
 
   }
 
@@ -25,7 +28,16 @@ export class MeterClanPage {
     this.servicioListaClanes.meterClan(item).then(ref =>{
       console.log(ref.key);
       this.navCtrl.setRoot("HomePage");
+      this.mensaje("Clan añadido correctamente.")
     })
+  }
+
+  mensaje (texto:string){
+    const toast = this.toast.create({
+      message: texto,
+      duration: 3000
+    });
+    toast.present();
   }
 
 }

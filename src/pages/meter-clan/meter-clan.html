@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar color="Purple">
     <ion-title>Añadir nuevo clan</ion-title>
   </ion-navbar>
 </ion-header>
@@ -18,7 +18,7 @@
 
   <ion-item>
     <ion-label>Objetivos del clan</ion-label>
-    <ion-textarea [(ngModel)]="item.objetivos"></ion-textarea>
+    <ion-textarea [(ngModel)]="item.objetivos" rows="5" maxLength="300"></ion-textarea>
   </ion-item>
 
   <ion-item>
@@ -26,5 +26,5 @@
     <ion-textarea [(ngModel)]="item.miembros" rows="10" maxLength="500"></ion-textarea>
   </ion-item>
 
-  <button ion-button block color="secondary" (click)="meterClan(item)">Añadir Clan</button>
+  <button ion-button block color="Gold" (click)="meterClan(item)">Añadir Clan</button>
 </ion-content>

@@ -3,13 +3,6 @@ import { ClanItem } from './../../models/clan-item/clan-item.interface';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 
-/**
- * Generated class for the EditarClanPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-editar-clan',
@@ -36,7 +29,7 @@ export class EditarClanPage {
     this.servicioListaCLanes.borrarClan(item)
     .then(()=> {
       this.navCtrl.setRoot("HomePage");
-      this.mensaje("Clan eliminado.");
+      this.mensaje("Clan eliminado correctamente.");
     })
   }
   

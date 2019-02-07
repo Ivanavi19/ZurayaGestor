@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="primary" hideBackButton>
+  <ion-navbar color="Purple" hideBackButton>
     <ion-title>Lista de clanes</ion-title>
     <ion-buttons end>
       <button ion-button
@@ -12,9 +12,27 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let item of listaClanes | async"
+    <ion-item-sliding *ngFor="let item of listaClanes | async">
+    <ion-item 
               (click)="selectClanItem(item)">
               <h1><b>{{ item.nombre }}</b></h1>
     </ion-item>
+
+    <ion-item-options side="left">
+        <button ion-button color="danger" (click)="borrarClan(item)" >
+          <ion-icon name="trash"></ion-icon>
+          Eliminar
+        </button>
+    </ion-item-options>
+
+    <ion-item-options side="right">
+        <button ion-button  color="Gold" (click)="editarClan(item)" >
+          <ion-icon name="brush"></ion-icon>
+          Editar
+        </button>
+    </ion-item-options>
+
+  </ion-item-sliding>
+
   </ion-list>
 </ion-content>

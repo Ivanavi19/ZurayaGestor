@@ -1,5 +1,4 @@
 import { ClanItem } from './../../models/clan-item/clan-item.interface';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 
@@ -26,6 +25,10 @@ export class ListaClanesProvider {
 
   borrarClan(item:ClanItem){
     return this.refListaClanes.remove(item.key);
+  }
+
+  verClan(item:ClanItem){
+    return this.refListaClanes.set(item.key, item);
   }
 
 
