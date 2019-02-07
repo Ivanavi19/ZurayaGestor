@@ -1,0 +1,7 @@
+{
+  "name": "ZurayaGestor",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

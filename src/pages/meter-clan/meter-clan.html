@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Añadir nuevo clan</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Nombre</ion-label>
+    <ion-input [(ngModel)]="item.nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Descripción del clan</ion-label>
+    <ion-textarea [(ngModel)]="item.descripcion" rows="5" maxLength="300"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Objetivos del clan</ion-label>
+    <ion-textarea [(ngModel)]="item.objetivos"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Miembros</ion-label>
+    <ion-textarea [(ngModel)]="item.miembros" rows="10" maxLength="500"></ion-textarea>
+  </ion-item>
+
+  <button ion-button block color="secondary" (click)="meterClan(item)">Añadir Clan</button>
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton>
+    <ion-title>Lista de clanes</ion-title>
+    <ion-buttons end>
+      <button ion-button
+              navPush="MeterClanPage">
+          <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of listaClanes | async"
+              (click)="selectClanItem(item)">
+              <h1><b>{{ item.nombre }}</b></h1>
+    </ion-item>
+  </ion-list>
+</ion-content>
